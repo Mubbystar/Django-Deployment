@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+{% extends 'Apped/base.html' %}
+
+{% block title %}
+    <title>Login</title>
+{% endblock %}
+
+{% block body %}
+    <h1>This is the login page</h1>
+        <form action="{% url 'Apped:user_login' %}" method="post">
+            {% csrf_token %}
+            <div class="fo">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" placeholder="Enter your username">
+            </div>
+            <div class="fo">
+                 <label for="password">Password:</label>
+                <input type="password" name="password" id="password" placeholder="**************">
+            </div>
+            <div class="fo">
+                <input class="submit" type="submit" value="Login">
+            </div>
+        </form>
+{% endblock %}
